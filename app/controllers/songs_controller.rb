@@ -5,12 +5,12 @@ class SongsController < ApplicationController
   end
 
   get '/songs/new' do
+  @genres = Genre.all
     erb :'/songs/create'
   end
 
   get '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-    @genres = Genre.all
     binding.pry
     erb :'/songs/show'
   end
