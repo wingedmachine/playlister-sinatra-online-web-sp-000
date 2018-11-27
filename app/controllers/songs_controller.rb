@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   post '/songs' do
     artist = Artist.find_or_create_by(name: params[:song][:artist_name])
     genres = params[:song][:genre_slugs].map { |slug| Genre.find_by_slug(slug) }
+    binding.pry
     Song.create()
   end
 
