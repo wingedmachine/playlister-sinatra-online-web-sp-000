@@ -15,6 +15,7 @@ describe "Song Forms" do
 
     context "without an existing artist" do
       it "creates a new artist on submit" do
+        binding.pry
         expect {
           fill_in "Name", with: song_name
           check "New Age Garbage"
