@@ -85,7 +85,7 @@ describe "Song Forms" do
       @song = Song.create(name: song_name)
       artist = Artist.create(name: artist_name)
 
-      @song.genres.create(genre: genre_1)
+      @song.genres << genre_1
       @song.artist = artist
 
       @song.save
