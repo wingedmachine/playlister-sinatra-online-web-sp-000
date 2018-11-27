@@ -5,9 +5,7 @@
   <input name="song[artist_name]" id="Artist Name" type="text"><br>
   <label>Genres:</label>
   <% @genres&.each do |genre| %>
-  <% binding.pry %>
     <input type="checkbox" name="song[genre_slugs][]" value="<%= genre.slug %>" id="<%= genre.name %>">
   <% end %>
-  <% binding.pry %>
   <input type="submit" id="submit">
 </form>
