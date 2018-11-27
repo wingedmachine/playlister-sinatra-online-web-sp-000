@@ -5,6 +5,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
+    binding.pry
     artist = Artist.find_or_create_by(name: params[song][artist_name])
     binding.pry
   end
