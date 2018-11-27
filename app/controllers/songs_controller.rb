@@ -8,7 +8,6 @@ class SongsController < ApplicationController
     artist = Artist.find_or_create_by(name: params[:song][:artist_name])
     genres = params[:song][:genre_slugs].map { |slug| Genre.find_by_slug(slug) }
     song = Song.create(genres: genres, artist: artist, name: params[:song][:name])
-    "Successfully created song."
     redirect "/songs/#{song.slug}"
   end
 
